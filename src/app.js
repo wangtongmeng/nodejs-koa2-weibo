@@ -61,6 +61,6 @@ app.use(users.routes(), users.allowedMethods())
 // error-handling 控制台打印错误信息
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
-});
+})
 
 module.exports = app
