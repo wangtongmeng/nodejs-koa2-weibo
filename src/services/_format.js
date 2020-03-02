@@ -3,13 +3,15 @@
  * @author 王童孟
  */
 
+const { DEFAULT_PICTURE } = require('../conf/constant')
+
 /**
   * 用户默认对象 
   * @param {Object} obj 用户对象
   */
 function _formatUserPicture(obj) {
   if (obj.picture == null) {
-    obj.picture = 'https://dwz.cn/rnTnftZs'
+    obj.picture = DEFAULT_PICTURE
   }
   return obj
 }

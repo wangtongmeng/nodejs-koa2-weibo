@@ -4,6 +4,7 @@
  */
 
 const { User } = require('../db/model/index')
+const { formatUser } = require('./_format')
 
 /**
  * 获取用户信息
@@ -29,7 +30,10 @@ async function getUserInfo(userName, password) {
     return result
   }
 
-  return result.dataValues
+  // 格式化
+  const formatRes = formatUser(result.dataValues)
+
+  return formatRes
 }
 
 module.exports = {
