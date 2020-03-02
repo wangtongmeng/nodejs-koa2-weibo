@@ -14,6 +14,7 @@ const { isProd } = require('./utils/env')
 // 路由 
 const index = require('./routes/index')
 const userViewRouter = require('./routes/view/user')
+const userAPIRouter = require('./routes/api/user')
 const errorViewRoute = require('./routes/view/error')
 
 // error handler 页面上显示错误信息
@@ -57,6 +58,7 @@ app.use(session({
 
 // routes 注册路由
 app.use(index.routes(), index.allowedMethods())
+app.use(userAPIRouter.routes(), userAPIRouter.allowedMethods())
 app.use(userViewRouter.routes(), userViewRouter.allowedMethods())
 app.use(errorViewRoute.routes(), errorViewRoute.allowedMethods()) // 404路由注册到最下面
 
